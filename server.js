@@ -6,6 +6,10 @@ app.listen(8090, function () {
     console.log('listening on 8090')
 });
 
+app.use(express.json());
+const cors = require('cors');
+app.use(cors());
+
 app.use(express.static(path.join(__dirname, 'react-repo/build')));
 
 app.get('/', function (req, res) {

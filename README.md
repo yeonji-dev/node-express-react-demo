@@ -31,4 +31,13 @@ app.listen(8090, function () {
        res.sendFile(path.join(__dirname, '/react-repo/build/index.html'));
    });
    ```
-  
+### CORS 설정 (client-side rendering)
+- server.js
+    ```js
+    app.use(express.json());
+    const cors = require('cors');
+    app.use(cors());
+    ```
+- `npm install cors` : 다른 도메인 주소끼리 ajax 요청 주고받을수 있게 함
+
+- 서버주소 입력하는거 귀찮으면 이거 사용 : [https://create-react-app.dev/docs/proxying-api-requests-in-development/](https://create-react-app.dev/docs/proxying-api-requests-in-development/)
